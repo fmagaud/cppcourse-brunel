@@ -45,7 +45,6 @@ thrown from the repertory "build".
 To run the tests, the command:
 	“./unit_test”
 must be thrown from the repertory “build”.
-
 The terminal will display the result of the tests (PASSED or FAILED).
 
 
