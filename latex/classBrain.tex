@@ -1,0 +1,240 @@
+\hypertarget{classBrain}{\section{Brain Class Reference}
+\label{classBrain}\index{Brain@{Brain}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBrain_ac319c036119b152ff89203b57129d5a0}{Brain} (unsigned long N\-E, unsigned long N\-I, unsigned long C\-E=0, unsigned long C\-I=0, double dt=0.\-1, double v\-\_\-ext=2.\-0, unsigned int Delay\-\_\-\-Steps=15, unsigned int Refractory\-\_\-\-Time\-\_\-\-Steps=20, double Vthr=20.\-0, double Vreset=0.\-0, double J\-E=1.\-0, double J\-I=-\/5.\-0, double J=0.\-1, double T\-A\-U=20, double R=20.\-0)
+\begin{DoxyCompactList}\small\item\em C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classBrain_ad91d2cdf1f02341e714e46d8fd2211c7}{get\-\_\-nb\-\_\-neurons} () const 
+\begin{DoxyCompactList}\small\item\em getter for the number of neurons. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classBrain_afe29b63acd6ce6a38634c9f533e40386}{get\-\_\-nb\-\_\-excitatory} () const 
+\begin{DoxyCompactList}\small\item\em getter for the number of excitatory neurons. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classBrain_ab8bb8e3dce88f5bea3de8171876556c3}{get\-\_\-nb\-\_\-inhibitory} () const 
+\begin{DoxyCompactList}\small\item\em getter for the number of inhibitory neurons. \end{DoxyCompactList}\item 
+const \hyperlink{classNeuron}{Neuron} \& \hyperlink{classBrain_ad255070c8fd86addf5a6c32ef09c3119}{get\-\_\-neuron} (unsigned long neuron\-\_\-index)
+\begin{DoxyCompactList}\small\item\em getter for a precise neuron. \end{DoxyCompactList}\item 
+void \hyperlink{classBrain_aa3cb8a4b80bf16c0c2b29586473cbc8f}{update} (unsigned long T, std\-::ostream \&file)
+\begin{DoxyCompactList}\small\item\em updates every neurons with time T and handles the signals sent \end{DoxyCompactList}\item 
+void \hyperlink{classBrain_a20c01b0942abcbb178c8325ad792cac2}{send\-\_\-signals} (unsigned long transmitter\-\_\-neuron, unsigned long T)
+\begin{DoxyCompactList}\small\item\em send signals to the receiver neurons of the transmitter neuron given. \end{DoxyCompactList}\item 
+void \hyperlink{classBrain_a1c4a9ec9389ee20c135851a5ad761e49}{add\-\_\-connection} (unsigned long transmitter\-\_\-neuron, unsigned long receiver\-\_\-neuron)
+\begin{DoxyCompactList}\small\item\em create a connection between 2 given neurons. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classBrain_a079be244ae24c5a4313d72632310b12d}{is\-\_\-connected} (unsigned long transmitter\-\_\-neuron, unsigned long receiver\-\_\-neuron) const 
+\begin{DoxyCompactList}\small\item\em returns the number of connections from a given transmitter neuron to a given receiver neuron. \end{DoxyCompactList}\item 
+\hypertarget{classBrain_ae4e1953862ed8bc1a6c1db955dea4052}{void \hyperlink{classBrain_ae4e1953862ed8bc1a6c1db955dea4052}{print} () const }\label{classBrain_ae4e1953862ed8bc1a6c1db955dea4052}
+
+\begin{DoxyCompactList}\small\item\em print on the terminal the time and for each neuron its number, its membrane potential and its number of spikes. \end{DoxyCompactList}\item 
+\hypertarget{classBrain_af41db0fbf20565d17d36bad299ae0cac}{\hyperlink{classBrain_af41db0fbf20565d17d36bad299ae0cac}{$\sim$\-Brain} ()}\label{classBrain_af41db0fbf20565d17d36bad299ae0cac}
+
+\begin{DoxyCompactList}\small\item\em D\-E\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBrain_ac319c036119b152ff89203b57129d5a0}{\index{Brain@{Brain}!Brain@{Brain}}
+\index{Brain@{Brain}!Brain@{Brain}}
+\subsubsection[{Brain}]{\setlength{\rightskip}{0pt plus 5cm}Brain\-::\-Brain (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{N\-E, }
+\item[{unsigned long}]{N\-I, }
+\item[{unsigned long}]{C\-E = {\ttfamily 0}, }
+\item[{unsigned long}]{C\-I = {\ttfamily 0}, }
+\item[{double}]{dt = {\ttfamily 0.1}, }
+\item[{double}]{v\-\_\-ext = {\ttfamily 2.0}, }
+\item[{unsigned int}]{Delay\-\_\-\-Steps = {\ttfamily 15}, }
+\item[{unsigned int}]{Refractory\-\_\-\-Time\-\_\-\-Steps = {\ttfamily 20}, }
+\item[{double}]{Vthr = {\ttfamily 20.0}, }
+\item[{double}]{Vreset = {\ttfamily 0.0}, }
+\item[{double}]{J\-E = {\ttfamily 1.0}, }
+\item[{double}]{J\-I = {\ttfamily -\/5.0}, }
+\item[{double}]{J = {\ttfamily 0.1}, }
+\item[{double}]{T\-A\-U = {\ttfamily 20}, }
+\item[{double}]{R = {\ttfamily 20.0}}
+\end{DoxyParamCaption}
+)}}\label{classBrain_ac319c036119b152ff89203b57129d5a0}
+
+
+C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\-E} & is the number of excitatory neurons wanted. \\
+\hline
+{\em N\-I} & is the number of inhibitory neurons wanted. \\
+\hline
+{\em C\-E} & is the number of excitatory connections received by each neuron. \\
+\hline
+{\em C\-I} & is the number of inhibitory connections received by each neuron. \\
+\hline
+{\em dt} & is the time step for each update in ms. \\
+\hline
+{\em v\-\_\-ext} & is the frequency of the external input needed to reach Vthr. \\
+\hline
+{\em Delay\-\_\-\-Steps} & is the delay for a neuron to transmit a signal in number of time steps. \\
+\hline
+{\em Refractory\-\_\-\-Time\-\_\-\-Steps} & is the refractrory time for the neurons (they don't have any activity during this time after spiking) in number of time steps. \\
+\hline
+{\em Vthr} & is the potential (m\-V) to exceed for a spike to appear. \\
+\hline
+{\em Vreset} & is the initial and refractory potential (m\-V). \\
+\hline
+{\em J\-E} & is the potential transmited when an excitatory neuron has a spike in number of J. \\
+\hline
+{\em J\-I} & is the potential transmited when an inhibitory neuron has a spike in number of J. \\
+\hline
+{\em J} & is the \char`\"{}potential step\char`\"{} transmitted between neurons in m\-V. \\
+\hline
+{\em T\-A\-U} & is the membrane time constant (ms). \\
+\hline
+{\em R} & is the neuron membrane resistance. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBrain_a1c4a9ec9389ee20c135851a5ad761e49}{\index{Brain@{Brain}!add\-\_\-connection@{add\-\_\-connection}}
+\index{add\-\_\-connection@{add\-\_\-connection}!Brain@{Brain}}
+\subsubsection[{add\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::add\-\_\-connection (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{transmitter\-\_\-neuron, }
+\item[{unsigned long}]{receiver\-\_\-neuron}
+\end{DoxyParamCaption}
+)}}\label{classBrain_a1c4a9ec9389ee20c135851a5ad761e49}
+
+
+create a connection between 2 given neurons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transmitter\-\_\-neuron} & is the index of the transmitter neuron. \\
+\hline
+{\em receiver\-\_\-neuron} & is the index of the receiver neuron. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classBrain_afe29b63acd6ce6a38634c9f533e40386}{\index{Brain@{Brain}!get\-\_\-nb\-\_\-excitatory@{get\-\_\-nb\-\_\-excitatory}}
+\index{get\-\_\-nb\-\_\-excitatory@{get\-\_\-nb\-\_\-excitatory}!Brain@{Brain}}
+\subsubsection[{get\-\_\-nb\-\_\-excitatory}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Brain\-::get\-\_\-nb\-\_\-excitatory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBrain_afe29b63acd6ce6a38634c9f533e40386}
+
+
+getter for the number of excitatory neurons. 
+
+\begin{DoxyReturn}{Returns}
+the number of excitatory neurons in the brain. 
+\end{DoxyReturn}
+\hypertarget{classBrain_ab8bb8e3dce88f5bea3de8171876556c3}{\index{Brain@{Brain}!get\-\_\-nb\-\_\-inhibitory@{get\-\_\-nb\-\_\-inhibitory}}
+\index{get\-\_\-nb\-\_\-inhibitory@{get\-\_\-nb\-\_\-inhibitory}!Brain@{Brain}}
+\subsubsection[{get\-\_\-nb\-\_\-inhibitory}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Brain\-::get\-\_\-nb\-\_\-inhibitory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBrain_ab8bb8e3dce88f5bea3de8171876556c3}
+
+
+getter for the number of inhibitory neurons. 
+
+\begin{DoxyReturn}{Returns}
+the number of inhibitory neurons in the brain. 
+\end{DoxyReturn}
+\hypertarget{classBrain_ad91d2cdf1f02341e714e46d8fd2211c7}{\index{Brain@{Brain}!get\-\_\-nb\-\_\-neurons@{get\-\_\-nb\-\_\-neurons}}
+\index{get\-\_\-nb\-\_\-neurons@{get\-\_\-nb\-\_\-neurons}!Brain@{Brain}}
+\subsubsection[{get\-\_\-nb\-\_\-neurons}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Brain\-::get\-\_\-nb\-\_\-neurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBrain_ad91d2cdf1f02341e714e46d8fd2211c7}
+
+
+getter for the number of neurons. 
+
+\begin{DoxyReturn}{Returns}
+the number of neurons in the brain. 
+\end{DoxyReturn}
+\hypertarget{classBrain_ad255070c8fd86addf5a6c32ef09c3119}{\index{Brain@{Brain}!get\-\_\-neuron@{get\-\_\-neuron}}
+\index{get\-\_\-neuron@{get\-\_\-neuron}!Brain@{Brain}}
+\subsubsection[{get\-\_\-neuron}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Neuron} \& Brain\-::get\-\_\-neuron (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{neuron\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{classBrain_ad255070c8fd86addf5a6c32ef09c3119}
+
+
+getter for a precise neuron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em neuron\-\_\-index} & is the index of the neuron wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the neuron with the index given. 
+\end{DoxyReturn}
+\hypertarget{classBrain_a079be244ae24c5a4313d72632310b12d}{\index{Brain@{Brain}!is\-\_\-connected@{is\-\_\-connected}}
+\index{is\-\_\-connected@{is\-\_\-connected}!Brain@{Brain}}
+\subsubsection[{is\-\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Brain\-::is\-\_\-connected (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{transmitter\-\_\-neuron, }
+\item[{unsigned long}]{receiver\-\_\-neuron}
+\end{DoxyParamCaption}
+) const}}\label{classBrain_a079be244ae24c5a4313d72632310b12d}
+
+
+returns the number of connections from a given transmitter neuron to a given receiver neuron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transmitter\-\_\-neuron} & is the index of the transmitter neuron. \\
+\hline
+{\em receiver\-\_\-neuron} & is the index of the receiver neuron. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of connections. 
+\end{DoxyReturn}
+\hypertarget{classBrain_a20c01b0942abcbb178c8325ad792cac2}{\index{Brain@{Brain}!send\-\_\-signals@{send\-\_\-signals}}
+\index{send\-\_\-signals@{send\-\_\-signals}!Brain@{Brain}}
+\subsubsection[{send\-\_\-signals}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::send\-\_\-signals (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{transmitter\-\_\-neuron, }
+\item[{unsigned long}]{T}
+\end{DoxyParamCaption}
+)}}\label{classBrain_a20c01b0942abcbb178c8325ad792cac2}
+
+
+send signals to the receiver neurons of the transmitter neuron given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transmitter\-\_\-neuron} & is the index of the neuron that send signals. \\
+\hline
+{\em T} & is the sending time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classBrain_aa3cb8a4b80bf16c0c2b29586473cbc8f}{\index{Brain@{Brain}!update@{update}}
+\index{update@{update}!Brain@{Brain}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::update (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{T, }
+\item[{std\-::ostream \&}]{file}
+\end{DoxyParamCaption}
+)}}\label{classBrain_aa3cb8a4b80bf16c0c2b29586473cbc8f}
+
+
+updates every neurons with time T and handles the signals sent 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is the new time (in numer of steps). \\
+\hline
+{\em file} & is the file in which the data will be save if there are somme spikes. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+brain.\-h\item 
+brain.\-cpp\end{DoxyCompactItemize}

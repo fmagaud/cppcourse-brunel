@@ -1,0 +1,55 @@
+A. Presentation of the program\-:
+
+This program can simulate a cortical activity following N. B\-R\-U\-N\-E\-L’s model and produce a file which contains the time and the neuron’s number of each spike that occurred during the simulation. This data can be used to create a graph.
+
+The cortex contains 10000 excitatory neurons and 2500 inhibitory neurons. Each neuron has a membrane potential and when they reach a certain value they spike and send a potential J\-E or J\-I (whether they’re excitatory or inhibitory) to the neurons they’re connected to. A random background noise is produced\-: each neuron receives a random number of J\-E.
+
+The user can choose\-:
+\begin{DoxyItemize}
+\item the time of simulation (in ms)
+\item the time step (in ms)
+\item 2 parameters of the model\-: .g which is the J\-I/\-J\-E ratio .E\-T\-A which is the rate of the background noise (it is used to produce the random numbers of J\-E received)
+\end{DoxyItemize}
+
+To modifiy the other parameters, they can be changed through the attributes of the class \hyperlink{classSimulation}{Simulation} in the file "simulation.\-h”. \begin{DoxyVerb}B. Compilation:
+\end{DoxyVerb}
+
+
+The program is compiled with c\-Make. To do so, the command\-: “cmake ..” and then \char`\"{}make\char`\"{} must be thrown from the repertory “build”. \begin{DoxyVerb}C. Utilisation:
+\end{DoxyVerb}
+
+
+
+\begin{DoxyItemize}
+\item To run the program, the command\-: “./simulation” must be thrown from the repertory “build”.
+\end{DoxyItemize}
+
+Once the program has started, the user will be asked to give\-:
+\begin{DoxyItemize}
+\item the time of simulation (in ms)
+\item the time step (in ms)
+\item the g parameter
+\item the E\-T\-A parameter
+\end{DoxyItemize}
+
+To obtain the 4 graphs present in the B\-R\-U\-N\-E\-L paper, the values for g and E\-T\-A are\-:
+\begin{DoxyItemize}
+\item figure A\-: g=3, E\-T\-A=2
+\item figure B\-: g=6, E\-T\-A=4
+\item figure C\-: g=5, E\-T\-A=2
+\item figure D\-: g=4.\-5, E\-T\-A=0.\-9
+\end{DoxyItemize}
+
+When the program is done, the data can be found in the “spikes.\-txt” file, located in the “build” repertory. A graph can be drawn using python with the command\-: \char`\"{}python graphic.\-py\char`\"{} thrown from the repertory \char`\"{}build\char`\"{}.
+
+
+\begin{DoxyItemize}
+\item To run the tests, the command\-: “./unit\-\_\-test” must be thrown from the repertory “build”.
+\end{DoxyItemize}
+
+The terminal will display the result of the tests (P\-A\-S\-S\-E\-D or F\-A\-I\-L\-E\-D).
+
+
+\begin{DoxyItemize}
+\item To see the doxygen documentation on line, the user can double click on a random “.\-html” file in the repertory “html”. \section*{cppcourse-\/brunel}
+\end{DoxyItemize}

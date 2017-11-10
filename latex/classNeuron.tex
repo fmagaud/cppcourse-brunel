@@ -1,0 +1,285 @@
+\hypertarget{classNeuron}{\section{Neuron Class Reference}
+\label{classNeuron}\index{Neuron@{Neuron}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNeuron_a303a198cf7b29291d79c5591cdca1b7b}{Neuron} (bool excitatory, double dt=0.\-1, unsigned int Delay\-\_\-\-Steps=15, unsigned int Refractory\-\_\-\-Time\-\_\-\-Steps=20, double Vthr=20.\-0, double Vreset=0.\-0, double J\-E=1.\-0, double J\-I=-\/5.\-0, double J=0.\-1, double T\-A\-U=20, double R=20.\-0, double Iext=0)
+\begin{DoxyCompactList}\small\item\em C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\item 
+double \hyperlink{classNeuron_aabdf60e772dbc1db9b4d6a4505e1fc5b}{get\-\_\-membrane\-\_\-potential} () const 
+\begin{DoxyCompactList}\small\item\em getter for the membrane potential. \end{DoxyCompactList}\item 
+int \hyperlink{classNeuron_a54ae4db12ef8d2d009a6cfb6c18652f0}{get\-\_\-nb\-\_\-of\-\_\-spikes} () const 
+\begin{DoxyCompactList}\small\item\em getter for the number of spikes. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNeuron_aeb98031765a52774a87689622f5a53d8}{get\-\_\-nb\-\_\-of\-\_\-signals} (unsigned int buffer\-\_\-index) const 
+\begin{DoxyCompactList}\small\item\em getter for the number of signals at a certain index in the signals\-\_\-buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_abf49994405d8aa85c9256ac0acbb20ac}{set\-\_\-\-Iext} (double Iext)
+\begin{DoxyCompactList}\small\item\em setter for the external current received. \end{DoxyCompactList}\item 
+bool \hyperlink{classNeuron_a2dce22bfbe82aa6df37f4f677437369b}{update} (unsigned long T, unsigned int random\-\_\-input)
+\begin{DoxyCompactList}\small\item\em updates the neuron with time T, calculate a new membrane potential and see if there is a spike. \end{DoxyCompactList}\item 
+bool \hyperlink{classNeuron_aa5ea653cd2d2c9d5e26aa7d62aa67c66}{add\-\_\-signals} ()
+\begin{DoxyCompactList}\small\item\em take the number of signals received for the current time into account to calculate the new membrane potential. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a56bb8165e1f411c299bda4d83fe313be}{signals\-\_\-update} (unsigned int t)
+\begin{DoxyCompactList}\small\item\em updates the current index for the signals\-\_\-buffer and if some time steps have been skiped, add the signals received for the current time. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_accee8011d930156bfeeb22ff0c8ee15d}{membrane\-\_\-update} (unsigned int t, unsigned int random\-\_\-input)
+\begin{DoxyCompactList}\small\item\em updates the membrane potential. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_aafae1db291da75e71e64ab30e86ec386}{spike\-\_\-update} (unsigned long T)
+\begin{DoxyCompactList}\small\item\em upates the neuron as a result of a spike. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_ae7525724f99def7bc878322fc8b76609}{receive\-\_\-signal} (unsigned long T, bool excitatory)
+\begin{DoxyCompactList}\small\item\em add in the appropriate index in the signals\-\_\- vector the signal received (J\-E or J\-I). \end{DoxyCompactList}\item 
+double \hyperlink{classNeuron_a387cdee004b66b26b104fe8ebe70c547}{equation} (unsigned int t) const 
+\begin{DoxyCompactList}\small\item\em calculate the equation \-: exp(-\/(t$\ast$dt\-\_\-)/\-T\-A\-U\-\_\-) $\ast$ membrane\-\_\-potential\-\_\- + Iext\-\_\-$\ast$\-R\-\_\-$\ast$(1-\/ exp(-\/(t$\ast$dt\-\_\-)/\-T\-A\-U\-\_\-)) \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_a3325375c3e88979eea14609f00c5df98}{void \hyperlink{classNeuron_a3325375c3e88979eea14609f00c5df98}{print\-Spikes} () const }\label{classNeuron_a3325375c3e88979eea14609f00c5df98}
+
+\begin{DoxyCompactList}\small\item\em print the number of spikes. \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_a94a250ce7e167760e593979b899745b1}{\hyperlink{classNeuron_a94a250ce7e167760e593979b899745b1}{$\sim$\-Neuron} ()}\label{classNeuron_a94a250ce7e167760e593979b899745b1}
+
+\begin{DoxyCompactList}\small\item\em D\-E\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNeuron_a303a198cf7b29291d79c5591cdca1b7b}{\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\subsubsection[{Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron\-::\-Neuron (
+\begin{DoxyParamCaption}
+\item[{bool}]{excitatory, }
+\item[{double}]{dt = {\ttfamily 0.1}, }
+\item[{unsigned int}]{Delay\-\_\-\-Steps = {\ttfamily 15}, }
+\item[{unsigned int}]{Refractory\-\_\-\-Time\-\_\-\-Steps = {\ttfamily 20}, }
+\item[{double}]{Vthr = {\ttfamily 20.0}, }
+\item[{double}]{Vreset = {\ttfamily 0.0}, }
+\item[{double}]{J\-E = {\ttfamily 1.0}, }
+\item[{double}]{J\-I = {\ttfamily -\/5.0}, }
+\item[{double}]{J = {\ttfamily 0.1}, }
+\item[{double}]{T\-A\-U = {\ttfamily 20}, }
+\item[{double}]{R = {\ttfamily 20.0}, }
+\item[{double}]{Iext = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_a303a198cf7b29291d79c5591cdca1b7b}
+
+
+C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em excitatory} & is a boolean which says if the neuron is excitatory or not. \\
+\hline
+{\em dt} & is the time step for each update in ms. \\
+\hline
+{\em Delay\-\_\-\-Steps} & is the delay to receive a signal in number of time steps. \\
+\hline
+{\em Refractory\-\_\-\-Time\-\_\-\-Steps} & is the refractrory time for the neurons (they don't have any activity during this time after spiking) in number of time steps. \\
+\hline
+{\em Vthr} & is the potential (m\-V) to exceed for a spike to appear. \\
+\hline
+{\em Vreset} & is the initial and refractory potential (m\-V). \\
+\hline
+{\em J\-E} & is the potential transmited when an excitatory neuron has a spike in number of J. \\
+\hline
+{\em J\-I} & is the potential transmited when an inhibitory neuron has a spike in number of J. \\
+\hline
+{\em J} & is the \char`\"{}potential step\char`\"{} transmitted between neurons in m\-V. \\
+\hline
+{\em T\-A\-U} & is the membrane time constant (ms). \\
+\hline
+{\em R} & is the neuron membrane resistance. \\
+\hline
+{\em Iext} & is the external current received by the neuron. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNeuron_aa5ea653cd2d2c9d5e26aa7d62aa67c66}{\index{Neuron@{Neuron}!add\-\_\-signals@{add\-\_\-signals}}
+\index{add\-\_\-signals@{add\-\_\-signals}!Neuron@{Neuron}}
+\subsubsection[{add\-\_\-signals}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::add\-\_\-signals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_aa5ea653cd2d2c9d5e26aa7d62aa67c66}
+
+
+take the number of signals received for the current time into account to calculate the new membrane potential. 
+
+\begin{DoxyReturn}{Returns}
+a boolean which says if the neurons has spikes because of received signals. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a387cdee004b66b26b104fe8ebe70c547}{\index{Neuron@{Neuron}!equation@{equation}}
+\index{equation@{equation}!Neuron@{Neuron}}
+\subsubsection[{equation}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::equation (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{t}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a387cdee004b66b26b104fe8ebe70c547}
+
+
+calculate the equation \-: exp(-\/(t$\ast$dt\-\_\-)/\-T\-A\-U\-\_\-) $\ast$ membrane\-\_\-potential\-\_\- + Iext\-\_\-$\ast$\-R\-\_\-$\ast$(1-\/ exp(-\/(t$\ast$dt\-\_\-)/\-T\-A\-U\-\_\-)) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the number of time steps since the last update (usually 1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the calculation. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_aabdf60e772dbc1db9b4d6a4505e1fc5b}{\index{Neuron@{Neuron}!get\-\_\-membrane\-\_\-potential@{get\-\_\-membrane\-\_\-potential}}
+\index{get\-\_\-membrane\-\_\-potential@{get\-\_\-membrane\-\_\-potential}!Neuron@{Neuron}}
+\subsubsection[{get\-\_\-membrane\-\_\-potential}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::get\-\_\-membrane\-\_\-potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_aabdf60e772dbc1db9b4d6a4505e1fc5b}
+
+
+getter for the membrane potential. 
+
+\begin{DoxyReturn}{Returns}
+the membrane potential in m\-V. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_aeb98031765a52774a87689622f5a53d8}{\index{Neuron@{Neuron}!get\-\_\-nb\-\_\-of\-\_\-signals@{get\-\_\-nb\-\_\-of\-\_\-signals}}
+\index{get\-\_\-nb\-\_\-of\-\_\-signals@{get\-\_\-nb\-\_\-of\-\_\-signals}!Neuron@{Neuron}}
+\subsubsection[{get\-\_\-nb\-\_\-of\-\_\-signals}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::get\-\_\-nb\-\_\-of\-\_\-signals (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{buffer\-\_\-index}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_aeb98031765a52774a87689622f5a53d8}
+
+
+getter for the number of signals at a certain index in the signals\-\_\-buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\-\_\-index} & is the index of the signals\-\_\-buffer where we will look for the number of signals received. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of signals received at this index. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a54ae4db12ef8d2d009a6cfb6c18652f0}{\index{Neuron@{Neuron}!get\-\_\-nb\-\_\-of\-\_\-spikes@{get\-\_\-nb\-\_\-of\-\_\-spikes}}
+\index{get\-\_\-nb\-\_\-of\-\_\-spikes@{get\-\_\-nb\-\_\-of\-\_\-spikes}!Neuron@{Neuron}}
+\subsubsection[{get\-\_\-nb\-\_\-of\-\_\-spikes}]{\setlength{\rightskip}{0pt plus 5cm}int Neuron\-::get\-\_\-nb\-\_\-of\-\_\-spikes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a54ae4db12ef8d2d009a6cfb6c18652f0}
+
+
+getter for the number of spikes. 
+
+\begin{DoxyReturn}{Returns}
+the number of spikes that the neuron had since the begining of the simulation. 
+\end{DoxyReturn}
+\hypertarget{classNeuron_accee8011d930156bfeeb22ff0c8ee15d}{\index{Neuron@{Neuron}!membrane\-\_\-update@{membrane\-\_\-update}}
+\index{membrane\-\_\-update@{membrane\-\_\-update}!Neuron@{Neuron}}
+\subsubsection[{membrane\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::membrane\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{t, }
+\item[{unsigned int}]{random\-\_\-input}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_accee8011d930156bfeeb22ff0c8ee15d}
+
+
+updates the membrane potential. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the number of time steps since the last update (usually 1). \\
+\hline
+{\em random\-\_\-input} & is a random number of excitatory signals received from \char`\"{}outside\char`\"{} the brain. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_ae7525724f99def7bc878322fc8b76609}{\index{Neuron@{Neuron}!receive\-\_\-signal@{receive\-\_\-signal}}
+\index{receive\-\_\-signal@{receive\-\_\-signal}!Neuron@{Neuron}}
+\subsubsection[{receive\-\_\-signal}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::receive\-\_\-signal (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{T, }
+\item[{bool}]{excitatory}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_ae7525724f99def7bc878322fc8b76609}
+
+
+add in the appropriate index in the signals\-\_\- vector the signal received (J\-E or J\-I). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is the time of the transmitter neuron when it had the spike. \\
+\hline
+{\em excitatory} & is a boolean which says if the transmitter neuron is excitatory or not. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_abf49994405d8aa85c9256ac0acbb20ac}{\index{Neuron@{Neuron}!set\-\_\-\-Iext@{set\-\_\-\-Iext}}
+\index{set\-\_\-\-Iext@{set\-\_\-\-Iext}!Neuron@{Neuron}}
+\subsubsection[{set\-\_\-\-Iext}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-\_\-\-Iext (
+\begin{DoxyParamCaption}
+\item[{double}]{Iext}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_abf49994405d8aa85c9256ac0acbb20ac}
+
+
+setter for the external current received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Iext} & is the external current in A. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_a56bb8165e1f411c299bda4d83fe313be}{\index{Neuron@{Neuron}!signals\-\_\-update@{signals\-\_\-update}}
+\index{signals\-\_\-update@{signals\-\_\-update}!Neuron@{Neuron}}
+\subsubsection[{signals\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::signals\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{t}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_a56bb8165e1f411c299bda4d83fe313be}
+
+
+updates the current index for the signals\-\_\-buffer and if some time steps have been skiped, add the signals received for the current time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the number of time steps since the last update (usually 1). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_aafae1db291da75e71e64ab30e86ec386}{\index{Neuron@{Neuron}!spike\-\_\-update@{spike\-\_\-update}}
+\index{spike\-\_\-update@{spike\-\_\-update}!Neuron@{Neuron}}
+\subsubsection[{spike\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::spike\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{T}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_aafae1db291da75e71e64ab30e86ec386}
+
+
+upates the neuron as a result of a spike. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is the new time (in numer of steps). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_a2dce22bfbe82aa6df37f4f677437369b}{\index{Neuron@{Neuron}!update@{update}}
+\index{update@{update}!Neuron@{Neuron}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::update (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{T, }
+\item[{unsigned int}]{random\-\_\-input}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_a2dce22bfbe82aa6df37f4f677437369b}
+
+
+updates the neuron with time T, calculate a new membrane potential and see if there is a spike. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & is the new time (in numer of steps). \\
+\hline
+{\em random\-\_\-input} & is a random number of excitatory signals received from \char`\"{}outside\char`\"{} the brain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean which says if the neurons has spikes during the update. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+neuron.\-h\item 
+neuron.\-cpp\end{DoxyCompactItemize}

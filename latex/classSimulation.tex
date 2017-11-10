@@ -1,0 +1,184 @@
+\hypertarget{classSimulation}{\section{Simulation Class Reference}
+\label{classSimulation}\index{Simulation@{Simulation}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSimulation_ad78c2f6a52ef4ffc4dbc331cb4ed1b08}{Simulation} (unsigned long N\-E, unsigned long N\-I, double dt, double t\-\_\-stop, double g, double E\-T\-A)
+\begin{DoxyCompactList}\small\item\em C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classSimulation_a8f9167d5abf40f9c4463fc8ce6714e23}{get\-\_\-\-C\-E} () const 
+\begin{DoxyCompactList}\small\item\em getter for the C\-E constant (number of excitatory connections received by each neuron). \end{DoxyCompactList}\item 
+unsigned long \hyperlink{classSimulation_a6a0fb4842ca82431468a9e98561360f2}{get\-\_\-\-C\-I} () const 
+\begin{DoxyCompactList}\small\item\em getter for the C\-I constant (number of inhibitory connections received by each neuron). \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSimulation_ae1f8c8afe524dd4c312037796698e533}{get\-\_\-\-Delay\-\_\-\-Steps} () const 
+\begin{DoxyCompactList}\small\item\em getter for the Delay\-\_\-\-Step constant (delay for a neuron to transmit a signal in number of time steps). \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSimulation_a5c16f085c358e3fb72d1c32e6d9bb0ec}{get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps} () const 
+\begin{DoxyCompactList}\small\item\em getter for the Refractory\-\_\-\-Time\-\_\-\-Steps constant (refractrory time for the neurons (they don't have any activity during this time after spiking) in number of time steps). \end{DoxyCompactList}\item 
+double \hyperlink{classSimulation_a1c84ccf7781a28dacfc0445a5fbcf27e}{get\-\_\-\-J\-I} () const 
+\begin{DoxyCompactList}\small\item\em getter for the J\-I constant (potential transmited when an inhibitory neuron has a spike in number of J\-\_\-). \end{DoxyCompactList}\item 
+double \hyperlink{classSimulation_a529087d8afb97b985c74fcdeb7a8329f}{get\-\_\-\-R} () const 
+\begin{DoxyCompactList}\small\item\em getter for the R constant (resistance of the neuron membrane). \end{DoxyCompactList}\item 
+double \hyperlink{classSimulation_a3a991511c975376cb57804c5db8acb21}{get\-\_\-v\-\_\-ext} () const 
+\begin{DoxyCompactList}\small\item\em getter for the v\-\_\-ext constant (the frequency of the external input needed to reach Vthr). \end{DoxyCompactList}\item 
+void \hyperlink{classSimulation_a92bcb99c5b442ef67d0229ae922a6240}{run} (std\-::ofstream \&file)
+\begin{DoxyCompactList}\small\item\em run the simulation from time = 0 to time = t\-\_\-stop with a time step of dt\-\_\- \end{DoxyCompactList}\item 
+\hypertarget{classSimulation_a80fad3f57dfaf195a36f7bc49bc88279}{\hyperlink{classSimulation_a80fad3f57dfaf195a36f7bc49bc88279}{$\sim$\-Simulation} ()}\label{classSimulation_a80fad3f57dfaf195a36f7bc49bc88279}
+
+\begin{DoxyCompactList}\small\item\em D\-E\-S\-T\-R\-U\-C\-T\-O\-R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSimulation_ad78c2f6a52ef4ffc4dbc331cb4ed1b08}{\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\subsubsection[{Simulation}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\-::\-Simulation (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{N\-E, }
+\item[{unsigned long}]{N\-I, }
+\item[{double}]{dt, }
+\item[{double}]{t\-\_\-stop, }
+\item[{double}]{g, }
+\item[{double}]{E\-T\-A}
+\end{DoxyParamCaption}
+)}}\label{classSimulation_ad78c2f6a52ef4ffc4dbc331cb4ed1b08}
+
+
+C\-O\-N\-S\-T\-R\-U\-C\-T\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\-E} & is the number of excitatory neurons wanted for the simulation. \\
+\hline
+{\em N\-I} & is the number of inhibitory neurons wanted for the simulation. \\
+\hline
+{\em dt} & is the time step for each update in ms. \\
+\hline
+{\em t\-\_\-stop} & is the length of the simulation in ms (the simulation will end when it reaches t\-\_\-stop). \\
+\hline
+{\em g} & is a conception parameter, it is the positive ratio of J\-I/\-J\-E. \\
+\hline
+{\em E\-T\-A} & is a conception parameter, it is the ratio for one connection and one second of v\-\_\-ext/v\-\_\-thr. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSimulation_a8f9167d5abf40f9c4463fc8ce6714e23}{\index{Simulation@{Simulation}!get\-\_\-\-C\-E@{get\-\_\-\-C\-E}}
+\index{get\-\_\-\-C\-E@{get\-\_\-\-C\-E}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Simulation\-::get\-\_\-\-C\-E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a8f9167d5abf40f9c4463fc8ce6714e23}
+
+
+getter for the C\-E constant (number of excitatory connections received by each neuron). 
+
+\begin{DoxyReturn}{Returns}
+C\-E\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a6a0fb4842ca82431468a9e98561360f2}{\index{Simulation@{Simulation}!get\-\_\-\-C\-I@{get\-\_\-\-C\-I}}
+\index{get\-\_\-\-C\-I@{get\-\_\-\-C\-I}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Simulation\-::get\-\_\-\-C\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a6a0fb4842ca82431468a9e98561360f2}
+
+
+getter for the C\-I constant (number of inhibitory connections received by each neuron). 
+
+\begin{DoxyReturn}{Returns}
+C\-I\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_ae1f8c8afe524dd4c312037796698e533}{\index{Simulation@{Simulation}!get\-\_\-\-Delay\-\_\-\-Steps@{get\-\_\-\-Delay\-\_\-\-Steps}}
+\index{get\-\_\-\-Delay\-\_\-\-Steps@{get\-\_\-\-Delay\-\_\-\-Steps}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-Delay\-\_\-\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Simulation\-::get\-\_\-\-Delay\-\_\-\-Steps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_ae1f8c8afe524dd4c312037796698e533}
+
+
+getter for the Delay\-\_\-\-Step constant (delay for a neuron to transmit a signal in number of time steps). 
+
+\begin{DoxyReturn}{Returns}
+Delay\-\_\-\-Steps\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a1c84ccf7781a28dacfc0445a5fbcf27e}{\index{Simulation@{Simulation}!get\-\_\-\-J\-I@{get\-\_\-\-J\-I}}
+\index{get\-\_\-\-J\-I@{get\-\_\-\-J\-I}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-J\-I}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\-::get\-\_\-\-J\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a1c84ccf7781a28dacfc0445a5fbcf27e}
+
+
+getter for the J\-I constant (potential transmited when an inhibitory neuron has a spike in number of J\-\_\-). 
+
+\begin{DoxyReturn}{Returns}
+J\-I\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a529087d8afb97b985c74fcdeb7a8329f}{\index{Simulation@{Simulation}!get\-\_\-\-R@{get\-\_\-\-R}}
+\index{get\-\_\-\-R@{get\-\_\-\-R}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-R}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\-::get\-\_\-\-R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a529087d8afb97b985c74fcdeb7a8329f}
+
+
+getter for the R constant (resistance of the neuron membrane). 
+
+\begin{DoxyReturn}{Returns}
+R\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a5c16f085c358e3fb72d1c32e6d9bb0ec}{\index{Simulation@{Simulation}!get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps@{get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps}}
+\index{get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps@{get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Simulation\-::get\-\_\-\-Refractory\-\_\-\-Time\-\_\-\-Steps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a5c16f085c358e3fb72d1c32e6d9bb0ec}
+
+
+getter for the Refractory\-\_\-\-Time\-\_\-\-Steps constant (refractrory time for the neurons (they don't have any activity during this time after spiking) in number of time steps). 
+
+\begin{DoxyReturn}{Returns}
+Refractory\-\_\-\-Time\-\_\-\-Steps\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a3a991511c975376cb57804c5db8acb21}{\index{Simulation@{Simulation}!get\-\_\-v\-\_\-ext@{get\-\_\-v\-\_\-ext}}
+\index{get\-\_\-v\-\_\-ext@{get\-\_\-v\-\_\-ext}!Simulation@{Simulation}}
+\subsubsection[{get\-\_\-v\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\-::get\-\_\-v\-\_\-ext (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSimulation_a3a991511c975376cb57804c5db8acb21}
+
+
+getter for the v\-\_\-ext constant (the frequency of the external input needed to reach Vthr). 
+
+\begin{DoxyReturn}{Returns}
+v\-\_\-ext\-\_\-. 
+\end{DoxyReturn}
+\hypertarget{classSimulation_a92bcb99c5b442ef67d0229ae922a6240}{\index{Simulation@{Simulation}!run@{run}}
+\index{run@{run}!Simulation@{Simulation}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-::run (
+\begin{DoxyParamCaption}
+\item[{std\-::ofstream \&}]{file}
+\end{DoxyParamCaption}
+)}}\label{classSimulation_a92bcb99c5b442ef67d0229ae922a6240}
+
+
+run the simulation from time = 0 to time = t\-\_\-stop with a time step of dt\-\_\- 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the file in which the data are printed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+simulation.\-h\item 
+simulation.\-cpp\end{DoxyCompactItemize}
