@@ -1,0 +1,7 @@
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/CMakeFiles/unit_test.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/CMakeFiles/doc.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/gtest/googlemock/CMakeFiles/gmock.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/gtest/googlemock/CMakeFiles/gmock_main.dir
+/home/INTRANET/fmagaud/myfiles/cpp/semestre3/neurons_project/build/CMakeFiles/simulation.dir
